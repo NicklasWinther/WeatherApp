@@ -1,0 +1,75 @@
+﻿<Window x:Class="WeatherApp.Gui.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WeatherApp.Gui"
+        mc:Ignorable="d"
+        Title="Vejr"
+        WindowStartupLocation="CenterScreen"
+        Height="600"
+        Width="500"
+        FontFamily="Rockwell"
+        x:Name="mainWindow">
+    <Window.Background>
+        <ImageBrush ImageSource="https://images.unsplash.com/photo-1558486012-817176f84c6d?ixlib=rb-1.2.1"
+                    Stretch="UniformToFill" />
+    </Window.Background>
+
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="2*" />
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Vertical"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center"
+                    Background="#99999999">
+            <Label Content="Søg efter by:"
+                   FontSize="30"
+                   HorizontalAlignment="Center"
+                   Foreground="White" />
+            <StackPanel Orientation="Horizontal"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center">
+                <TextBox x:Name="searchTextBox"
+                         Height="40"
+                         Width="200"
+                         VerticalContentAlignment="Center"
+                         Background="LightGray"
+                         BorderBrush="#27d"
+                         BorderThickness="3"
+                         Padding="5"
+                         Margin="10,5,0,10">
+                </TextBox>
+                <Button  x:Name="searchButton"
+                         IsDefault="True"
+                         Height="40"
+                         Width="60"
+                         Content="Søg"
+                         Background="#27d"
+                         BorderThickness="0"
+                         FontSize="20"
+                         Foreground="White"
+                         Margin="0,5,10,10"
+                         VerticalContentAlignment="Center"
+                         HorizontalContentAlignment="Center"
+                         Click="searchButton_Click">
+                </Button>
+            </StackPanel>
+        </StackPanel>
+        <Label x:Name="temperatureLabel"
+               Grid.Row="1"
+               VerticalAlignment="Center"
+               HorizontalAlignment="Center"
+               FontSize="100">
+            <Label.Style>
+                <Style TargetType="Label">
+                    <Setter Property="FontWeight"
+                            Value="Bold" />
+                </Style>
+            </Label.Style>
+        </Label>
+    </Grid>
+</Window>
